@@ -21,6 +21,7 @@ body {
   width:100vw;
   min-height:100vh;
   padding-top:50px;
+  color:black;
 }
 
 .search-container {
@@ -39,6 +40,10 @@ body {
   height: 100%;
   width: 50%;
   font-size: 20px;
+  color:black;
+  background-color:white;
+  border: 1px solid black;
+  border-radius:5px;
 }
 
 .button {
