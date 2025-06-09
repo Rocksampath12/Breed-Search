@@ -9,7 +9,6 @@ import './mainFile.css'
 const MainFile = () => {
   let [arrayData, setArrayData] = useState([])
   let [searchValue, setSearchVal] = useState('')
-  let cnt=0;
 
   let changeInputFieldFun = event => {
     setSearchVal(event.target.value)
@@ -30,10 +29,8 @@ const MainFile = () => {
     }
   }
 
-  arrayData.forEach((obj)=>{
-    if (obj.attributes.name.toLowerCase().includes(searchValue.toLowerCase())){
-      ++cnt;
-    }
+  let filteredData = arrayData.filter((obj)=>{
+    return obj.attributes.name.toLowerCase().includes(searchValue.toLowerCase())
   })
 
   return (
@@ -48,7 +45,7 @@ const MainFile = () => {
       </div>
       <div className="boxes">
         {/* testing  */}
-        {cnt===0?(
+        {filteredData.length===0?(
           <div className="notfound-container">
             <h1>No Breeds Found</h1>
           </div>
